@@ -1,0 +1,23 @@
+{
+  "name": "AA RCE Sandbox",
+  "description": "",
+  "version": "0.1",
+  //need to permissiong in hosts to allow xhr - check this and it's port
+  "permissions": ["webview", "http://localhost/"],
+  "webview": {
+    "partitions": [
+      {
+        //when we create the content webview we need give it global resource access privileges
+        //eg. <webview partition="rce">
+        "name": "rce",
+        "accessible_resources": ["*.*"]
+      }
+    ]
+  },
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }
+}
