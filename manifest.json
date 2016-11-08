@@ -2,13 +2,10 @@
   "name": "AudioBooks",
   "description": "Listen, collect and download free mp3 audiobooks.",
   "version": "0.1",
-  //need to permissiong in hosts to allow xhr - check this and it's port
   "permissions": ["webview", "http://localhost/"],
   "webview": {
     "partitions": [
       {
-        //when we create the content webview we need give it global resource access privileges
-        //eg. <webview partition="rce">
         "name": "rce",
         "accessible_resources": ["*.*"]
       }
